@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;padding:0;
+			}
+			li{list-style: none;}
+			#ul1{
+				width: 300px;height:auto;float: left;border-top: 1px solid saddlebrown;margin: 20px;
+			}
+			li{
+				width:100%;height: 30px;overflow: hidden;position:relative;border-bottom: 1px solid saddlebrown;line-height: 30px;;
+			}
+			li div{
+				position: absolute;top: -30px;-webkit-transition:all 1s;
+			}
+			li div p{
+				height: 30px;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				
+				
+				var ul=document.getElementById("ul1");
+				var div=ul.getElementsByTagName("div");
+				kia()
+				function kia(){
+					
+					var i=0;
+					var s=setInterval(function(){
+					
+					if(i!=div.length){
+
+						if(i==div.length){
+							i=div.length;
+							
+						}else{
+							div[i++].style.top="0px"
+						}
+		
+					}else{
+					var b=setTimeout("kk()",1000);
+
+						clearInterval(s)
+					}
+					
+				},100)
+				}
+				
+				
+				function kk(){
+			
+					
+					var i=div.length;
+					 var v=setInterval(function(){
+					
+					if(i!=0){
+
+						if(i==0){
+							i=0;
+							
+						}else{
+							div[i--].style.top="-30px"
+						}
+		
+					}else{
+						var w=setTimeout("kia()",1000);
+
+						clearInterval(v);
+					}
+					
+				},100)
+				}	
+						
+				
+			}
+				
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li>
+				<div>
+					<p>111111</p>
+					<p>122222</p>
+				</div>
+			</li>
+			<li>
+				<div>
+					<p>111111</p>
+					<p>122222</p>
+				</div>
+			</li>
+			<li>
+				<div>
+					<p>111111</p>
+					<p>122222</p>
+				</div>
+			</li>
+			<li>
+				<div>
+					<p>111111</p>
+					<p>122222</p>
+				</div>
+			</li>
+			<li>
+				<div>
+					<p>111111</p>
+					<p>122222</p>
+				</div>
+			</li>
+		</ul>
+	</body>
+</html>

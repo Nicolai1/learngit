@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		#roll{
+			width: 500px;height: 40px;line-height: 40px;border: 1px solid #ccc;overflow: hidden;position: relative;
+		}
+		.ul{
+			margin: 0;padding: 0;position: absolute;left: 100%;
+		}
+		.ul li{
+			float: left;
+			list-style: none;
+			margin-left: 10px;
+		}
+	</style>
+	<body>
+		<div id="roll">
+			<ul class="ul">
+				<li><a>uuuuuuuuuuuuuuuuuuu</a></li>
+				<li><a>ssssss</a></li>
+				<li><a>ssssss</a></li>
+				<li><a>ssssss</a></li>
+				<li><a>ssssss</a></li>
+				<li><a>ssssss</a></li>
+				<li><a>ssssss</a></li>
+				<li><a>ssssss</a></li>
+				<li><a>ssssss</a></li>
+			</ul>
+			
+		</div>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+		<script>
+		var i=0;
+		var width=$("#roll").width();
+		for(var j=0;j<$(".ul li").length;j++){
+			console.log($(".ul li").eq(j).width()+$(".ul li").eq(j-1).width())
+		}
+	var ss=	document.querySelector('.ul').offsetWidth;
+	alert(ss)
+		function setTome(){
+			
+			
+			if(i>=width){
+				i=0;
+				$(".ul").css({left:width});
+			}else{
+				i++;
+			
+			$(".ul").css({left:-i+width});
+			}
+			
+		}
+			setInterval("setTome()",10)
+			
+			$.each( $(".ul li").width(), function(i, n){
+console.log( "Name: " + i + ", Value: " + n );
+});
+		</script>
+	</body>
+</html>

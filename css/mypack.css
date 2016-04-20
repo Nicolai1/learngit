@@ -1,0 +1,65 @@
+body,h1,h2,h3,h4,h5,div,p,ul,li,span{
+	margin: 0;
+	padding: 0;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #000;
+}
+a:hover{
+	text-decoration: underline;
+}
+.clearfd:after {
+	display: block;
+	clear: both;
+	content: "";
+	visibility: hidden;
+	height: 0;
+}
+.clearfd {
+	zoom: 1;
+}
+.fd-left {
+	float: left;
+}
+.fd-right {
+	float: right;
+}
+.button {
+	padding: 8px 20px 8px 20px;
+	background: #337ab7;
+	color: #fff;
+	display: inline;
+	border-radius: 5px;
+	cursor: pointer;
+	border: 1px solid #2e6da4;
+	outline: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	text-align: center;	
+}
+.button:hover {
+	background: #2e6da4;
+	box-shadow: 0 0 5px #2e6da4;
+}
+
+.button:active {
+	background: #25557D;
+}
+.table{
+	border-collapse:collapse;
+	width: 100%;
+}
+.table td,.table th{
+	border: 1px solid #ccc;
+	padding:8px;
+	word-break:break-all;	
+}
+.tab-keep{
+	 word-break: keep-all;white-space:nowrap;
+}
+
+
+

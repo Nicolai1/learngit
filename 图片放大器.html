@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+	<meta charset="utf-8">
+<head>
+<title></title>
+<style type="text/css">
+
+</style>
+
+<script type="text/javascript" src="js/my-animate.js">
+
+
+</script>
+<style>
+*{
+	margin: 0;padding:0;;
+}
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+	.form-control {
+    display: block;
+    width: 90%;
+    height: 20px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+#img1,#img2{
+	width: 500px;height: auto;position:absolute;
+}
+#img2{
+	left: 00px;zoom: 3;display: none
+}
+#div2{
+	width: 100px;height: 50px;border:1px solid #039702;position: absolute;left: 0;top: 0;display: none;
+	
+}
+</style>
+</head><body>
+<div>
+	<div id="div1" style="position:relative;" >
+		<img src="img/1245105.jpg" id="img1"/>
+		<img src="img/1245105.jpg" id="img2"/>
+		<div id="div2"></div>
+	</div>
+</div>
+
+<script type="text/javascript">
+window.onload=function(){
+	var img1,div2;
+	img1=document.getElementById("img1");
+	img2=document.getElementById("img2");
+	div2=document.getElementById("div2");
+
+	img1.onmouseover=function(){
+	
+		div2.style.display="block"
+		var X=event.clientX;
+		var Y=event.clientY;
+		div2.style.left=X-50+"px"
+		div2.style.top=Y-25+"px"
+		
+		img2.style.display="block"
+		img2.style.left=(500-2*X)/2+50+"px"
+		img2.style.top=10-Y+25+"px"
+		
+		
+		var r_top=Y-25;
+		var r_left=X-50;
+		var r_witdh=r_left+100;
+		var r_height=r_top+50;
+		img2.style.clip="rect("+r_top+"px "+r_witdh+"px "+r_height+"px "+r_left+"px )"
+	}
+	img1.onmouseout=function(){
+		div2.style.display="none"
+		img2.style.display="none"
+	}
+}
+	</script>
+</body>
+</html>
+

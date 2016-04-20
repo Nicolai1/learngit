@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		.con div {
+			display: none;
+			float: left;
+			width: 500px;
+			height: 400px;
+			border: 1px solid #000;
+		}
+	</style>
+
+	<body>
+		<div>
+			<ul class="nav">
+				<li class="on">aaa</li>
+				<li>aaa</li>
+			</ul>
+			<div class="con">
+				<div>ww</div>
+				<div>cc</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		tab()
+
+		function tab() {
+			var nav = document.querySelector(".nav");
+			var li = nav.getElementsByTagName("li");
+			var con = document.querySelector(".con");
+			var div = con.getElementsByTagName("div");
+			div[0].style.display = "block";
+			for (var i = 0; i < li.length; i++) {
+				li[i].index = i;
+				li[i].onclick = function() {
+					for (var j = 0; j < div.length; j++) {
+						div[j].style.display = "none"
+					}
+					div[this.index].style.display = "block"
+				}
+			}
+		}
+	</script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	<body>
+<div class="sss">中国人</div>
+<script type="text/javascript">
+//	(function($) {
+//	var template = $('#template').html();
+//	function get_data() {
+//		$.ajax({
+//			url: 'kk.html',
+//			dataType: 'json',
+//			success: function(data) {
+//				for(var i = 0; i <data.length; ++i) {
+//					var tmp = data[i];
+//					 console.log(tmp); 
+//
+//					// 循环输出，用变量替换template中的{{变量}}
+//				}
+//			}
+//		});
+//	}
+//	get_data();
+//})(jQuery);
+$.getJSON("kk.html",{param:"USER_GUID"},function(data){  
+//此处返回的data已经是json对象  
+  $.each(data.root,function(idx,item){  
+    if(idx==0){  
+      return true;//同continue，返回false同break  
+    }  
+    console.log("name:"+data.root[0].name+",value:"+data.root[0].value);  
+  });  
+}); 
+
+var ss=document.querySelectorAll(".sss");
+ss[0].onclick=function(){
+	alert(this)
+}
+</script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/zepto.min.js" ></script>
+	</head>
+	<style>
+	*{
+		margin: 0;padding: 0;
+	}
+	body{
+		-webkit-transition: all 1s;
+		-moz-transition: all 1s;
+		-ms-transition: all 1s;
+		-o-transition: all 1s;
+		transition: all 1s;
+	}
+		#ss p{
+			height: 80px;
+		}
+	</style>
+	<body>
+		<button id="ssw">ssw</button>
+		<div id="ss">
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+			<p>sssssssssss</p>
+		</div>
+		<script>
+		window.onload=function(){
+			var win=$(window).height();
+			var body=$(document).height()
+				
+			var sch=body-win;
+			
+			  $('#ssw').click(function(){
+    $('html,body').animate({scrollTop: '100px'}, 800);
+    });
+			
+			
+		}
+			
+		</script>
+	</body>
+</html>

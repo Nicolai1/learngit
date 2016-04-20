@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		body {
+			transition: all 1s;
+		}
+		
+		#q1 {
+			width: 100px;
+			height: 500px;
+			background: red;
+			transition: all 1s;
+		}
+		
+		#q2 {
+			width: 100px;
+			height: 500px;
+			background: bisque;
+			transition: all 1s;
+		}
+		
+		#q3 {
+			width: 100px;
+			height: 500px;
+			background: blueviolet;
+			transition: all 1s;
+		}
+		
+		#q4 {
+			width: 100px;
+			height: 500px;
+			background: gold;
+			transition: all 1s;
+		}
+		
+		#q5 {
+			width: 100px;
+			height: 500px;
+			background: green;
+			transition: all 1s;
+		}
+		
+		.meun {
+			position: fixed;
+			left: 500px;
+			top: 100px;
+		}
+		
+		.meun a {
+			display: block;
+			width: 30px;
+			height: 30px;
+		}
+		
+		.sw {
+			background: greenyellow;
+			color: #fff;
+		}
+	</style>
+
+	<body>
+		<div class="meun">
+			<a href="#q1" class="sw">1</a>
+			<a href="#q2">2</a>
+			<a href="#q3">3</a>
+			<a href="#q4">4</a>
+			<a href="#q5">5</a>
+		</div>
+		<div id="content">
+			<div id="q1">
+
+			</div>
+			<div id="q2">
+
+			</div>
+			<div id="q3">
+
+			</div>
+			<div id="q4">
+
+			</div>
+			<div id="q5">
+
+			</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+	<script>
+	$(window).scroll(function(){
+		var top = $(document).scrollTop();
+		 var con=$("#content div");
+		 
+		 var conId="";
+		 con.each(function(){
+		 	if(top>$(this).offset().top-200){
+		 		conId="#"+$(this).attr("id");
+		 	}else{
+		 		return false;
+		 	}
+		 })
+		 if(conId && $(".sw").attr("href")!=conId){
+		 	$(".sw").removeClass("sw");
+		 	$(".meun").find("[href=" + conId + "]").addClass("sw")
+		 }
+		 
+		 
+	})
+		 
+		 
+		 
+	</script>
+
+</html>

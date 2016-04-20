@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>倒计时</title>
+	</head>
+	<script>
+	//倒计天数
+		var nowTime=new Date();
+		var endTime=new Date("2016.6.31");  
+		var mun=endTime.getTime()-nowTime.getTime();//转换成毫秒
+		//毫秒转换成天数
+		var d=mun/(24*60*60*1000);    
+		var d2=Math.ceil(d);   //ceil() 向上转换成整数
+		alert(d2)
+		
+		//倒计时间
+		var nowTime2=new Date();
+		var endTime2=new Date("2016/4/1,12:30:40");  
+		//转换成秒
+		var mun2=parseInt((endTime2.getTime()-nowTime2.getTime())/1000);  
+		var d=parseInt(mun2/(24*60*60));   //获取天数
+		var h=parseInt(mun2/(60*60)%24);	//获取小时
+		var m=parseInt(mun2/60%60);			//分钟
+		var s=parseInt(mun2%60);		//秒
+		window.onload=function(){
+			var ds=document.getElementById("ss")
+			ds.innerHTML=d+"天"+h+"小时"+m+"分钟"+s+"秒";
+		}
+	</script>
+	<body>
+	<div id="ss"></div>
+
+
+
+
+
+
+
+
+	</body>
+	
+</html>
