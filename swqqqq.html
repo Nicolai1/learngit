@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<style>
+	#images li{
+		list-style: none;height: 40px;line-height: 40px;border-bottom: 1px solid #008000;
+	}
+</style>
+	<body>
+		<div id="images"></div>
+		<script>
+			$(function() {
+				$.getJSON('sw.json', function(data) {
+				for(var i=0;i<data.one.length;i++){
+					  $("#images").append("<li>"+data.one[i].name+"</li>");
+				}	
+				});
+			});
+		</script>
+	</body>
+
+</html>
